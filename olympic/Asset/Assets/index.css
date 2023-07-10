@@ -1,0 +1,67 @@
+#navbarNav{
+    background-color:#FFFFFF;
+    opacity: 1;
+}
+#content{
+    padding-top: 80px;
+    padding-left: 100px;
+}
+#hb{
+    font-size: 70px;
+    color: #FFFFFF;
+}
+#parab{
+    padding-top: 15px;
+    padding-left: 180px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+#hs{
+    font-size: 70px;
+    color: #FFFFFF;
+}
+#paras{
+    padding-top: 15px;
+    padding-left: 20px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+#btn-1{
+    margin-left: 250px ;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    background: linear-gradient(to top,#FFF 50%,#c5bfe1 50%); 
+    background-size: 100% 200%;
+    background-position: bottom;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+}
+#btn-1:hover{
+    background-position: top;
+}
+
+#btn-2{
+    margin-left: 500px ;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    background: linear-gradient(to top,#FFF 50%,#eb838a 50%);  
+    background-size: 100% 200%;
+    background-position: bottom;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+}
+#btn-2:hover{
+    background-position: top;
+}

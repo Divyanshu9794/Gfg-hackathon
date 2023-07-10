@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLYMPICS</title>
+    <link rel="stylesheet" href="/Assets/signup.css">
+   
+</head>
+<script>  
+    function validateform(){  
+    var name=document.myform.name.value;  
+    var password=document.myform.password.value; 
+    var confrm_passwd = document.myform.confrm_passwd.value;
+    var email = document.myform.email.value; 
+    var atposition=email.indexOf("@");  
+    var dotposition=email.lastIndexOf(".");  
+      
+    if (name==null || name==""){  
+      alert("Name can't be blank");  
+      return false;  
+    }else if(password.length<6){  
+      alert("Password must be at least 6 characters long.");  
+      return false;  
+      }  
+      else if(password!=confrm_passwd){  
+        alert("password must be same!");  
+        return false;
+        }  
+        
+        else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+        alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+        return false;  
+        }  
+        else{
+            return true;
+        }
+    }  
+    </script>  
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>REGISTER!!!</h3>
+                        <p>Fill in the data below.</p>
+                        <form action="/signup.html" method="post"class="requires-validation" name="myform">
+
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                               
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                                 
+                            </div>
+
+
+                           <div class="col-md-12">
+                              <input class="form-control" type="password" name="password" placeholder="Password" required>
+                              
+                           </div>
+
+                           <div class="col-md-12">
+                            <input class="form-control" type="password" name="confrm_passwd" placeholder="Confirm Password" required>
+                            
+                         </div>
+
+
+                          
+
+                        
+                  
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary" onclick="validateform()">Register</button>
+                                <button id="reset" type="reset" class="btn btn-primary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

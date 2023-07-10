@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Assets/login.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="login-title">Log in</h2>
+
+    <form action="/login.html" method="post" class="login-form">
+      
+
+      <div>
+        <label for="email">Email </label>
+        <input
+               id="email"
+               type="email"
+               placeholder="me@example.com"
+               name="email"
+               required
+               />
+      </div>
+
+      <div>
+        <label for="password">Password </label>
+        <input
+               id="password"
+               type="password"
+               placeholder="password"
+               name="password"
+               required
+               />
+      </div>
+
+      <button class="btn btn--form" type="submit" value="Log in">
+        Log in
+      </button>
+    </form>
+</div>
+</body>
+</html>
