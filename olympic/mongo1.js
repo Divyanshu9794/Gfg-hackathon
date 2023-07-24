@@ -190,56 +190,6 @@ app.post('/login.html',async(req,res)=>{
 
 
 
-app.post('/contact.html', function (req, res) {
-   
-    const email = req.body.email
-    
-    const phone = req.body.number
-    const name = req.body.name
-    const message = req.body.msg
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'sdivyanshu5561@gmail.com',
-            pass: 'rllqpkstuoejbugo'
-        }
-    })
-
-    var mailoptions = {
-        from: 'sdivyanshu5561@gmail.com',
-        to: req.body.email,
-        subject: 'Welcome to Edureka ' ,
-        html: "Thanks For Contacting Us!! Our Executive Will Contact You Within 24 hours <br> Thankyou!! <br> EDUREKA"
-
-
-    };
-
-    transporter.sendMail(mailoptions, function (error, info) {
-        if (error) {
-            console.log(error);
-        }
-        else {
-        
-            console.log("success")
-            res.redirect("/");
-        }
-
-    })
-
-    var data = {
-        "Name": name,
-        "email": email,
-        "Phone number": phone,
-
-        "Message": message
-        
-    }
-    db.collection('Contact').insertOne(data, function (err, collection) {
-        if (err) console.log(err)
-        else console.log("Record inserted")
-    })
-
-})
 
 
 app.listen(port, () => {
