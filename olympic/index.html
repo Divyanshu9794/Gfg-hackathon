@@ -4,61 +4,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympic</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="/Assets/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="/Assets/index.css">
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top " >
     <div class="container-fluid">
-      <a href="#"><img src="/images/logo_color.svg"></a>
+      <a href="/"><img src="/images/logo_color.svg"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/fixture.html" style="font-size: 25px; padding-left: 25px;">Fixtures</a>
+            <a class="nav-link" href="/fixture.html" style="font-size: 25px; padding-left: 25px;color:#FFFFFF">Fixtures</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Games</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 25px;padding-left: 25px;">Atheletes</a>
+            <li class="nav-item">
+              <a class="nav-link" href="/atheletes.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Atheletes</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/login.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 25px;padding-left: 25px;">Games</a>
+            <a class="nav-link" href="/signup.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Signup</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login.html" style="font-size: 25px;padding-left: 25px;">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup.html" style="font-size: 25px;padding-left: 25px;">Signup</a>
+            <a class="nav-link" href="https://olympic-games-analysis.streamlit.app/" target="_blank" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Analysis</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container-fluid" style="background-color:#0081C8;">
-     <div class="row">
-      <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 50px; padding-top: 20px; padding-bottom: 15px;">
-        <img src="/images/stadium2.jpg" height="1100px" width="1000px" class="img-fluid">      
-     </div>
-     <div class="col-xl-7 col-lg-7 col-md-7" id="content">
-           <h2 id="hb">Enjoy the thrill live!</h2>
-           <p id="parab">Book tickets now</p>
-           <button id="btn-1"><span>Book</span></button>
-         </div>
-  </div>
-  </div>
-  <div class="container-fluid" style="background-color:#EE334E;">
-    <div class="row">
-      <div class="col-xl-7 col-lg-7 col-md-7" id="content">
-        <h2 id="hs">Stay Tuned!</h2>
-        <p id="paras">Connect with us for all the latest updates.</p>
-        <a href="/signup.html"><button id="btn-2"><span>Sign Up now</span></button></a>
+  <section id="home" class="d-flex align-items-centre min-vh-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="display-1 fw-bold" style="margin-top: 25vh;margin-left:3vh;color:#FFFFFF;">Olympic 2024</h1>
+          <h3 style="margin-left: 10vh; color: #FFFFFF;">Unite, Inspire, Soar</h3>
+        </div>
       </div>
-          <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 50px; padding-top: 50px;">
-          <img src="/images/tourch.png" height="1200px" width="1100px" class="img-fluid">      
-       </div>
+    </div>
+  </section>
+  <section id="Atheletes" class="section-padding section-connector">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title" style="text-align: center;padding-top: 25px;">
+            <h1>Featured Atheletes</h1>
+            <p>Embrace the Grueling Path, Harness Your Inner Fire, and Rise Above the Rest to Achieve Extraordinary Heights of Athletic Excellence.</p>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4 text-center">
+        <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="athelete py-5 px-4 border">
+                <div class="athelete-image">
+                    <img src="/images/novak.webp" style="border-radius: 50%; width: 200px;">
+                </div>
+                <h5 class="mt-4"> Novak DJOKOVIC</h5>
+                <p>Team :Serbia</p>
+                <a href="#" class="custom-link">
+                    <span>Tennis</span>
+                    <img src="/images/tennis_icon.png">
+                </a>
+            </div>
+        </div>
+    <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="athelete py-5 px-4 border">
+          <div class="athelete-image">
+            <img src="/images/katie.webp" style="border-radius: 50%; width: 200px;">
+          </div>
+          <h5 class="mt-4">Katie LEDECKY</h5>
+          <p>Team :United State of America</p>
+          <a href="#" class="custom-link">
+              <span>Swimming</span>
+              <img src="/images/swimming_icon.png">
+          </a>
+      </div>
+  </div>
+  <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="athelete py-5 px-4 border">
+          <div class="athelete-image">
+            <img src="/images/kaylee.webp" style="border-radius: 50%; width: 200px;">
+          </div>
+          <h5 class="mt-4">Kaylee MCKEOWN</h5>
+          <p>Team :Australia</p>
+          <a href="#" class="custom-link">
+              <span>Swimming</span>
+              <img src="/images/swimming_icon.png">
+          </a>
+      </div>
+  </div>
+  <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="athelete py-5 px-4 border">
+          <div class="athelete-image">
+            <img src="/images/neeraj.webp" style="border-radius: 50%; width: 210px;height: 210px;">
+          </div>
+          <h5 class="mt-4">Neeraj Chopra</h5>
+          <p>Team :India</p>
+          <a href="#" class="custom-link">
+              <span>Javelin Throw</span>
+              <img src="/images/javelin.png">
+          </a>
+      </div>
+  </div>
+  </div>
+    </div>
+  </section>
+  <section id="games" class="section-padding section-connector">
+    <div class="container-fluid">
+        <div class="row g2">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="setion-title" style="text-align: center;padding-top: 55px;">
+                    <h1 style="padding-bottom: 10px;">Games</h1>
+                    <p style="padding-bottom: 10px; font-size: 20px;">"Beyond Boundaries, Together We Rise: Embracing Diversity, Achieving Greatness in the Olympic Spirit"</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="game">
+                    <img src="/images/archery.jpg" alt="" height="300px" width="300px" class="image">
+                    <div class="content">
+                        <button class="text">Read More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="game">
+                  <img src="/images/atheletics.jpg" alt="" height="300px" width="300px" class="image">
+                  <div class="content">
+                    <button class="text">Read More</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="game">
+                <img src="/images/badminton.jpg" alt="" height="300px" width="300px" class="image">
+                <div class="content">
+                  <button class="text">Read More</button>
+              </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="game">
+                <img src="/images/boxing.webp" alt="" height="300px" width="300px" class="image">
+                <div class="content">
+                  <button class="text">Read More</button>
+              </div>
+                </div>
+            </div>
+           </div>
+           <div class="row g-2">
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="game">
+                    <img src="/images/wrestling.jpeg" alt="" height="300px" width="300px" class="image">
+                    <div class="content">
+                      <button class="text">Read More</button>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="game">
+                  <img src="/images/weightlifting.jpeg" alt="" height="300px" width="300px" class="image">
+                  <div class="content">
+                    <button class="text">Read More</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="game">
+                <img src="/images/tennis.jpg" alt="" height="300px" width="300px" class="image">
+                <div class="content">
+                  <button class="text">Read More</button>
+              </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="game">
+                <img src="/images/hockey.jpeg" alt="" height="300px" width="300px" class="image">
+                <div class="content">
+                  <button class="text">Read More</button>
+              </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <div class="row">
+     <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 50px; padding-top: 20px; padding-bottom: 15px;">
+       <img src="/images/stadium2.jpg" height="1100px" width="1000px" class="img-fluid">      
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-7">
+          
+      <a href="ticket_generator.html" target="_blank"><button id="btn-1"><span>Enjoy the thrill live! <br>Book tickets now</span></button></a>
+          <!-- <button id="btn-1"><span><a href="ticket_generator.html">Book</a></span></button> -->
+        </div>
  </div>
  </div>
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 50px; padding-top: 20px; padding-bottom: 15px;">
+     <img src="/images/analysis.jpg" height="1100px" width="1000px" class="img-fluid">      
+  </div>
+  <br>
+
+  <div class="col-xl-7 col-lg-7 col-md-7">
+        
+    <a href="https://olympic-games-analysis.streamlit.app/" target="_blank"><button id="btn-1"><span>Analysis Of Olympics</span></button></a>
+        <!-- <button id="btn-1"><span><a href="ticket_generator.html">Book</a></span></button> -->
+      </div>
+</div>
+</div>
+  <div class="footer">
+    <p>copyright</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/Assets/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    </script>
 </body>
 
 </html>

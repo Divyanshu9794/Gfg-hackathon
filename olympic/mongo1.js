@@ -21,6 +21,10 @@ app.get('/signup.html', (req, res) => {
     res.sendFile(__dirname + '/signup.html')
 
 })
+app.get('/atheletes.html', (req, res) => {
+    res.sendFile(__dirname + '/atheletes.html')
+
+})
 app.get('/login.html', (req, res) => {
     res.sendFile(__dirname + '/login.html')
 
@@ -38,6 +42,16 @@ app.get('/fixture.js', (req, res) => {
     res.sendFile(__dirname + '/fixture.js')
 
 })
+
+app.get('/ticket_generator.html', (req, res) => {
+    res.sendFile(__dirname + '/ticket_generator.html')
+
+})
+app.get('/payment.html', (req, res) => {
+    res.sendFile(__dirname + '/payment.html')
+
+})
+
 
 
 
@@ -97,6 +111,50 @@ app.post('/signup.html', function (req, res) {
     })
 
 })
+app.post('/payment.html', (req, res) => {
+    // Extract the form data
+    const name = req.body.name
+    const email = req.body.email
+    
+  
+    // Generate a random room number
+    const roomNumber = Math.floor(Math.random() * 100) + 1;
+  
+    // Create the email message
+    const message = `Dear ${name},\n\nYour ticket has been booked for the event .
+      Your room number is ${roomNumber}.`;
+  
+    // Set up the nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail', // Enter the email service you are using (e.g., Gmail)
+      auth: {
+          user: 'sdivyanshu5561@gmail.com',
+          pass: 'rllqpkstuoejbugo'
+      }
+    });
+  
+    // Set up the email options
+    const mailOptions = {
+      from: 'sdivyanshu5561@gmail.com',
+      to: email,
+      subject: 'Ticket Booking Confirmation',
+      text: message
+    };
+  
+    // Send the email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log('Error:', error);
+        res.status(500).send('Error sending email');
+      } else {
+        console.log("booking Successfully");
+        
+ 
+            alert('booked Successfully');
+            res.redirect("/");
+      }
+    });
+  });
 
 
 app.post('/login.html',async(req,res)=>{

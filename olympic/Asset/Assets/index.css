@@ -1,6 +1,72 @@
+.navbar{
+    padding-top: 30px;
+    position: fixed;
+    padding-bottom: 120px;
+    transition: var(--transition);
+}
+
 #navbarNav{
-    background-color:#FFFFFF;
-    opacity: 1;
+    background-color:#0d0d0d;
+    opacity: 0.5;
+}
+.section-title{
+    max-width: 560px;
+    margin: 0 auto 60px auto;
+}
+.section-title .line{
+    width: 60px;
+    height: 2px;
+    background-color: #c5bfe1;
+    display: inline-block;
+}
+.section-connector{
+      position: relative;
+}
+.section-connector::after{
+    content: '';
+    width: 2px;
+    height: 70px;
+    background-color: #c5bfe1;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+
+}
+.navbar.scrolled {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: rgb(48, 48, 48);
+    box-shadow: var(--shadow);
+}
+
+.navbar-toggler {
+    border-radius: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+.custom-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.custom-link span {
+    font-weight: 700;
+}
+
+.custom-link:hover i {
+    transform: translateX(6px);
+}
+
+#home{
+    background-image: url('/images/olympic_ring.webp');
 }
 #content{
     padding-top: 80px;
@@ -65,3 +131,44 @@
 #btn-2:hover{
     background-position: top;
 }
+.image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .content {
+    transition: .5s ease;
+    opacity: 0;
+    position: relative;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .game:hover .image {
+    opacity: 0.3;
+  }
+  
+  .game:hover .content {
+    opacity: 1;
+  }
+  
+  .text {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 15px;
+    padding: 12px 12px;
+    transform: translate(140%, -230%);
+    
+  }
+  .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    text-align: center;
+  }

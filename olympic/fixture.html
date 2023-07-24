@@ -3,59 +3,1920 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Assets/fixture.css">
+    <title>Fixture</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+  <link rel="stylesheet" href="/Assets/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <title>Atheletes</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+  <body class="p-3 m-0 border-0 bd-example bd-example-row">
 
-    <!-- Example Code -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top " style="position: fixed;">
+      <div class="container-fluid">
+        <a href="/"><img src="/images/logo_color.svg"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/fixture.html"
+                style="font-size: 25px; padding-left: 25px;color:#FFFFFF">Fixtures</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Games</a>
+            </li>
+            <li class="nav-item">
+            <li class="nav-item">
+              <a class="nav-link" href="/atheletes.html"
+                style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Atheletes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://olympic-games-analysis.streamlit.app/" target="_blank" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Analysis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br><br><br><br>
+    <h1>OLYMPICS SCHEDULE</h1>
+    
+    <select id="destinationSelect">
+      <option value="">Select a Day </option>
+    </select>
+    <button onclick="redirect()">Go</button>
+  <script>
+    
+    function populateOptions() {
+      var destinations = [
+        { value: "#d1", label: "Day 1" },
+        { value: "#d2", label: "Day 2" },
+        { value: "#d3", label: "Day 3" },
+        { value: "#d4", label: "Day 4" },
+        { value: "#d5", label: "Day 5" },
+        { value: "#d6", label: "Day 6" },
+        { value: "#d7", label: "Day 7" },
+        { value: "#d8", label: "Day 8" },
+        { value: "#d9", label: "Day 9" },
+        { value: "#d10", label: "Day 10" },
+       
+      ];
+
+      var selectElement = document.getElementById("destinationSelect");
+      for (var i = 0; i < destinations.length; i++) {
+        var option = document.createElement("option");
+        option.value = destinations[i].value;
+        option.textContent = destinations[i].label;
+        selectElement.appendChild(option);
+      }
+    }
+
    
-    
+    populateOptions();
+
+    function redirect() {
+      var selectElement = document.getElementById("destinationSelect");
+      var selectedValue = selectElement.value;
+
       
-    <br><br><br>  
-    <div class="container">
+      if (selectedValue !== "") {
+        window.location.href = selectedValue;
+      } else {
+        alert("Please select an option");
+      }
+    }
+  </script>
     
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col">
-        <div class="card">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+    <br>
+    <br>
+
+    <h4 id="d1"><b>DAY 1</b></h4>
+    <br>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <b>SPORTS</b>
         </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+        <div class="col">
+          <b>EVENT</b>
         </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
+        <div class="col">
+          <b>START TIME</b>
         </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+        <div class="col">
+         <b>VENUE</b>
         </div>
       </div>
     </div>
-</div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Softball
+        </div>
+        <div class="col">
+          Women's Opening round,Australia vs Japan
+        </div>
+        <div class="col">
+          09:00
+        </div>
+        <div class="col">
+          Fukushima Azuma Baseball Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Softball
+        </div>
+        <div class="col">
+          Women's Opening round,Italy vs United States
+        </div>
+        <div class="col">
+          12:00
+        </div>
+        <div class="col">
+          Fukushima Azuma Baseball Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Softball
+        </div>
+        <div class="col">
+          Women's Opening round,Mexico vs Canada
+        </div>
+        <div class="col">
+          15:00
+        </div>
+        <div class="col">
+          Fukushima Azuma Baseball Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Softball
+        </div>
+        <div class="col">
+          Women's Opening round,Britain vs Chile
+        </div>
+        <div class="col">
+          16:30
+        </div>
+        <div class="col">
+          Sapporo Dome
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Women's Group E-Great Britain vs Chile
+        </div>
+        <div class="col">
+          16:30
+        </div>
+        <div class="col">
+          Sapporo Dome
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Women's Group F-China vs Brazil
+        </div>
+        <div class="col">
+          17:00
+        </div>
+        <div class="col">
+          Miyagi Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Women's Group G-Sweden vs United States
+        </div>
+        <div class="col">
+          17:30
+        </div>
+        <div class="col">
+          Tokyo Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Women's Group G-Japan vs Canada
+        </div>
+        <div class="col">
+          19:30
+        </div>
+        <div class="col">
+          Sapporo Dome
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Women's Group F-Zambia vs Netherlands
+        </div>
+        <div class="col">
+          20:00
+        </div>
+        <div class="col">
+          Miyagi Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Women's Group G-Australia vs New Zealand 
+        </div>
+        <div class="col">
+          20:30
+        </div>
+        <div class="col">
+          Tokyo Stadium
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h4 id="d2"><b>DAY 2</b></h4>
+    <br>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <b>SPORTS</b>
+        </div>
+        <div class="col">
+          <b>EVENT</b>
+        </div>
+        <div class="col">
+          <b>START TIME</b>
+        </div>
+        <div class="col">
+         <b>VENUE</b>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Shooting 
+        </div>
+        <div class="col">
+          10m Air Pistol Men's, Official Training
+        </div>
+        <div class="col">
+          09:00
+        </div>
+        <div class="col">
+          Asaka Shooting Range - 10m Range
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Softball
+        </div>
+        <div class="col">
+          Softball, Opening Round,United States vs Canada
+        </div>
+        <div class="col">
+          09:00
+        </div>
+        <div class="col">
+          Fukushima Azuma Baseball Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Shooting
+        </div>
+        <div class="col">
+          10m Air Pistol Men's, Official Training
+        </div>
+        <div class="col">
+          10:30
+        </div>
+        <div class="col">
+          Asaka Shooting Range-10m Range
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Softball
+        </div>
+        <div class="col">
+          Softball, Opening Round,Mexico vs Japan
+        </div>
+        <div class="col">
+          12:00
+        </div>
+        <div class="col">
+          Fukushima Azuma Baseball Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Shooting
+        </div>
+        <div class="col">
+          10m Air Pistol Women's, Official Training
+        </div>
+        <div class="col">
+          12:20
+        </div>
+        <div class="col">
+          Asaka Shooting Range-10m Range
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Men's Group C-Egypt vs Spain
+        </div>
+        <div class="col">
+          16:30
+        </div>
+        <div class="col">
+          Sapporo Domes
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Men's Group A- Mexico vs France
+        </div>
+        <div class="col">
+          17:00
+        </div>
+        <div class="col">
+          Tokyo Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Men's Group B-New Zealand vs Republic of Korea
+        </div>
+        <div class="col">
+          17:00
+        </div>
+        <div class="col">
+          Ibaraki Kashima Stadium
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Men's Group D-Cote d'Ivoire vs Saudi Arabia
+        </div>
+        <div class="col">
+          17:30
+        </div>
+        <div class="col">
+         International Stadium Yokohama
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Football
+        </div>
+        <div class="col">
+          Men's Group C-Argentina vs Australia
+        </div>
+        <div class="col">
+          19:30
+        </div>
+        <div class="col">
+          Sapporo Dome
+        </div>
+      </div>
+      </div>
+      <br>
+      <br>
+      <h4 id="d3"><b>DAY 3</b></h4>
+      <br>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <b>SPORTS</b>
+          </div>
+          <div class="col">
+            <b>EVENT</b>
+          </div>
+          <div class="col">
+            <b>START TIME</b>
+          </div>
+          <div class="col">
+           <b>VENUE</b>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing 
+          </div>
+          <div class="col">
+            Men's Single Sculls,Heat 1
+          </div>
+          <div class="col">
+            08:30
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Men's Single Sculls,Heat 2
+          </div>
+          <div class="col">
+            08:40
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Men's Single Scull, Heat 3
+          </div>
+          <div class="col">
+            08:50
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Men's Single Scull, Heat 4
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Archery
+          </div>
+          <div class="col">
+            Women's individual, Ranking round 
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Yumenoshima Ranking Field
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Men's Single Scull, Heat 5
+          </div>
+          <div class="col">
+            09:10
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Men's Single Scull, Heat 6
+          </div>
+          <div class="col">
+            09:20
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Women's Single Sculls,Heat 1
+          </div>
+          <div class="col">
+            09:30
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Women's Single Sculls,Heat 2
+          </div>
+          <div class="col">
+            09:40
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Rowing
+          </div>
+          <div class="col">
+            Women's Single Sculls,Heat 3
+          </div>
+          <div class="col">
+            09:50
+          </div>
+          <div class="col">
+            Sea Forest Waterway
+          </div>
+        </div>
+        </div>
+        <br>
+      <br>
+      <h4 id="d4"><b>DAY 4</b></h4>
+      <br>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <b>SPORTS</b>
+          </div>
+          <div class="col">
+            <b>EVENT</b>
+          </div>
+          <div class="col">
+            <b>START TIME</b>
+          </div>
+          <div class="col">
+           <b>VENUE</b>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Shooting
+          </div>
+          <div class="col">
+            10m Air Riffle Women's,Qualification
+          </div>
+          <div class="col">
+            08:30
+          </div>
+          <div class="col">
+            Asaka Shooting Range-10m Range
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Handball
+          </div>
+          <div class="col">
+            Men's Preliminary Round,Group A-Norway vs Brazil
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Yoyogi National Stadium
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Volleyball
+          </div>
+          <div class="col">
+            Men's Preliminary Round, Pool A-Italy vs Canada
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Ariake Arena
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Badminton
+          </div>
+          <div class="col">
+            Mixed double,Group Play Stage, Group C- WATANABE Yuta/ HIGGASHINO Arisa vs CHRISTIANSEN Mathias/BOJE Alexandra
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Mussahino Forest Sport Plaza BDM court 1
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Shooting
+          </div>
+          <div class="col">
+            Skeet Women's, Pre-Event Training 
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Asaka Shooting Range-Shotgun Ranges
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Fencing
+          </div>
+          <div class="col">
+            Women's Epee individual,Table of 64,LIN Yik Hei Coco vs ABDUL RAHMAN Kiria Tikanah
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+          Makuhari Messe Hall B red Piste
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Badminton
+          </div>
+          <div class="col">
+           Women's single, Group Play Stage, QI Xuefei vs NGUYEN tHUY LINH
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Musashino Forest Sport Plaza BDM court 3
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Table tennis
+          </div>
+          <div class="col">
+            Women's single, Group Play Stage, QI Xuefei vs NGUYEN tHUY LINH
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Tokyo Metropolian Gymnasium Table 3
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Table tennis
+          </div>
+          <div class="col">
+            Women's singles, Preminary Round, YEE Sally vs EDGHILL Chelsea
+          </div>
+          <div class="col">
+            09:00
+          </div>
+          <div class="col">
+            Tokyo Metropolian Gymnasium Table 2
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            Volleyball
+          </div>
+          <div class="col">
+            Women's singles, Preminary Round, YEE Sally vs EDGHILL Chelsea
+          </div>
+          <div class="col">
+            09:50
+          </div>
+          <div class="col">
+          Shiokaze Park-Centre Court
+          </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <h4 id="d5"><b>DAY 5</b></h4>
+        <br>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <b>SPORTS</b>
+            </div>
+            <div class="col">
+              <b>EVENT</b>
+            </div>
+            <div class="col">
+              <b>START TIME</b>
+            </div>
+            <div class="col">
+             <b>VENUE</b>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Surfing
+            </div>
+            <div class="col">
+              Men's Round 1- Heat 1
+            </div>
+            <div class="col">
+              07:00
+            </div>
+            <div class="col">
+             Tsurigasaki Surfing beach
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Surfing
+            </div>
+            <div class="col">
+              Men's Round 1- Heat 2
+            </div>
+            <div class="col">
+              07:40
+            </div>
+            <div class="col">
+              Tsurigasaki Surfing beach
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Surfing
+            </div>
+            <div class="col">
+              Men's Round 1- Heat 3
+            </div>
+            <div class="col">
+              08:20
+            </div>
+            <div class="col">
+              Tsurigasaki Surfing beach
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Shooting
+            </div>
+            <div class="col">
+             10m Air Pistol Women's Qualification
+            </div>
+            <div class="col">
+              09:00
+            </div>
+            <div class="col">
+             Asaka Shooting Range -10m range
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Rowing
+            </div>
+            <div class="col">
+              Men's Single Scull,Semifinal,E/F 1 
+            </div>
+            <div class="col">
+              09:00
+            </div>
+            <div class="col">
+             Sea Forest Waterway
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Surfing
+            </div>
+            <div class="col">
+              Men's Round 1- Heat 4
+            </div>
+            <div class="col">
+              09:00
+            </div>
+            <div class="col">
+              Tsurigasaki Surfing beach
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Shooting
+            </div>
+            <div class="col">
+              Skeet Women's Qualification, Day 1
+            </div>
+            <div class="col">
+              09:20
+            </div>
+            <div class="col">
+              Asaka Shooting Range -10m range
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Fencing
+            </div>
+            <div class="col">
+              Women Foil Individual,Table of 64
+            </div>
+            <div class="col">
+              09:00
+            </div>
+            <div class="col">
+              Makuhari Messe Hall B Red Piste
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Fencing
+            </div>
+            <div class="col">
+              Women Foil Individual,Table of 64
+            </div>
+            <div class="col">
+              09:00
+            </div>
+            <div class="col">
+              Makuhari Messe Hall B Red Piste
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              Handball
+            </div>
+            <div class="col">
+              Women Preliminary Round A
+            </div>
+            <div class="col">
+              09:00
+            </div>
+            <div class="col">
+              Makuhari Messe Hall B Red Piste
+            </div>
+          </div>
+          </div>
+          <br>
+          <br>
+          <h4 id="d6"><b>DAY 6</b></h4>
+          <br>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <b>SPORTS</b>
+              </div>
+              <div class="col">
+                <b>EVENT</b>
+              </div>
+              <div class="col">
+                <b>START TIME</b>
+              </div>
+              <div class="col">
+               <b>VENUE</b>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Surfing
+              </div>
+              <div class="col">
+                Women's, Round 3 Heat 1
+              </div>
+              <div class="col">
+                07:00
+              </div>
+              <div class="col">
+                Tsurigasaki Surfing Beach
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Surfing
+              </div>
+              <div class="col">
+                Women's, Round 3 Heat 2
+              </div>
+              <div class="col">
+                07:30
+              </div>
+              <div class="col">
+                Tsurigasaki Surfing Beach
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Surfing
+              </div>
+              <div class="col">
+                Women's, Round 3 Heat 3
+              </div>
+              <div class="col">
+                08:00
+              </div>
+              <div class="col">
+                Tsurigasaki Surfing Beach
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Shooting 
+              </div>
+              <div class="col">
+                10m Air Pistol Mixed Team, Pre training
+              </div>
+              <div class="col">
+                09:00
+              </div>
+              <div class="col">
+                Asaka Shooting Range - 10m Range
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Handball
+              </div>
+              <div class="col">
+                Men's Preliminary Round, Group A- Brazil vs France
+              </div>
+              <div class="col">
+                09:00
+              </div>
+              <div class="col">
+               Yoyogi National Stadium
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Volleyball
+              </div>
+              <div class="col">
+                Men's Preliminary Round, Pool A- Islamic Rep. of Iran vs Venezuela
+              </div>
+              <div class="col">
+                09:00
+              </div>
+              <div class="col">
+              Ariaka Areka 
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Shooting 
+              </div>
+              <div class="col">
+                Skeet Women's Qualification, Day 2
+              </div>
+              <div class="col">
+                09:00
+              </div>
+              <div class="col">
+                Asaka Shooting Range- Shotgun Ranges
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Fencing
+              </div>
+              <div class="col">
+                Women's Sabre Individual, Table of 64
+              </div>
+              <div class="col">
+                09:00
+              </div>
+              <div class="col">
+              Makuhari Messe Hall B yellow piste
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Fencing
+              </div>
+              <div class="col">
+                Women's Sabre Individual, Table of 64
+              </div>
+              <div class="col">
+                09:40
+              </div>
+              <div class="col">
+                Makuhari Messe Hall B yellow piste
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+              Volleyball
+              </div>
+              <div class="col">
+               Women's Preliminary,Pool D
+              </div>
+              <div class="col">
+                09:00
+              </div>
+              <div class="col">
+                Shiokaze park-Centre Court
+              </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <h4 id="d7"><b>DAY 7</b></h4>
+            <br>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  <b>SPORTS</b>
+                </div>
+                <div class="col">
+                  <b>EVENT</b>
+                </div>
+                <div class="col">
+                  <b>START TIME</b>
+                </div>
+                <div class="col">
+                 <b>VENUE</b>
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Tennis
+                </div>
+                <div class="col">
+                  Men's Single second round
+                </div>
+                <div class="col">
+                  08:30
+                </div>
+                <div class="col">
+                  Ariake Tennis park Centre court
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Tennis
+                </div>
+                <div class="col">
+                  Women's singles, Third round
+                </div>
+                <div class="col">
+                  09:00
+                </div>
+                <div class="col">
+                  Ariake Tennis park Centre court
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Surfing
+                </div>
+                <div class="col">
+                  Men's Quaterfinals-heat 1
+                </div>
+                <div class="col">
+                  06:30
+                </div>
+                <div class="col">
+                  Tsurigasaki Surfing Beach
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Surfing
+                </div>
+                <div class="col">
+                  Men's Quaterfinals-heat 2
+                </div>
+                <div class="col">
+                  07:30
+                </div>
+                <div class="col">
+                  Tsurigasaki Surfing Beach
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Surfing
+                </div>
+                <div class="col">
+                  Men's Quaterfinals-heat 3
+                </div>
+                <div class="col">
+                  08:00
+                </div>
+                <div class="col">
+                  Tsurigasaki Surfing Beach
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Surfing
+                </div>
+                <div class="col">
+                  Men's Quaterfinals-heat 4
+                
+                </div>
+                <div class="col">
+                  08:30
+                </div>
+                <div class="col">
+                  Tsurigasaki Surfing Beach
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Shooting
+                </div>
+                <div class="col">
+                10m Air Pistol Mixed Team, Qualification,Stage 1
+                </div>
+                <div class="col">
+                  09:00
+                </div>
+                <div class="col">
+                  Asaka Shooting Range
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Rowing
+                </div>
+                <div class="col">
+                  Women's Single Sculls,Heat 1
+                </div>
+                <div class="col">
+                  09:30
+                </div>
+                <div class="col">
+                  Sea Forest Waterway
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Rowing
+                </div>
+                <div class="col">
+                  Women's Single Sculls,Heat 2
+                </div>
+                <div class="col">
+                  09:40
+                </div>
+                <div class="col">
+                  Sea Forest Waterway
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  Rowing
+                </div>
+                <div class="col">
+                  Women's Single Sculls,Heat 3
+                </div>
+                <div class="col">
+                  09:50
+                </div>
+                <div class="col">
+                  Sea Forest Waterway
+                </div>
+              </div>
+              </div>
+              <br>
+              <br>
+              <h4 id="d8"><b>DAY 8</b></h4>
+              <br>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    <b>SPORTS</b>
+                  </div>
+                  <div class="col">
+                    <b>EVENT</b>
+                  </div>
+                  <div class="col">
+                    <b>START TIME</b>
+                  </div>
+                  <div class="col">
+                   <b>VENUE</b>
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Rowing 
+                  </div>
+                  <div class="col">
+                   Men's Double Scull, Final B
+                  </div>
+                  <div class="col">
+                    08:30
+                  </div>
+                  <div class="col">
+                    sea forest waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Rowing
+                  </div>
+                  <div class="col">
+                    Women's Double Scull, Final B
+                  </div>
+                  <div class="col">
+                    09:00
+                  </div>
+                  <div class="col">
+                    sea forest waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                   Rowing
+                  </div>
+                  <div class="col">
+                   Men's Four,Final B
+                  </div>
+                  <div class="col">
+                    09:30
+                  </div>
+                  <div class="col">
+                    sea forest waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Rowing
+                  </div>
+                  <div class="col">
+                    Women's Four,Final B
+                  </div>
+                  <div class="col">
+                    09:50
+                  </div>
+                  <div class="col">
+                    sea forest waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Shooting
+                  </div>
+                  <div class="col">
+                    25m Pistol Women's,Pre-Training
+                  </div>
+                  <div class="col">
+                    09:00
+                  </div>
+                  <div class="col">
+                    Asaka Shooting Range-Shotgun Ranges
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Fencing
+                  </div>
+                  <div class="col">
+                    Women's Epee individual,Table of 64,LIN Yik Hei Coco vs ABDUL RAHMAN Kiria Tikanah
+                  </div>
+                  <div class="col">
+                    09:00
+                  </div>
+                  <div class="col">
+                  Makuhari Messe Hall B red Piste
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Badminton
+                  </div>
+                  <div class="col">
+                    Men's Single Scull, Heat 6
+                  </div>
+                  <div class="col">
+                    09:20
+                  </div>
+                  <div class="col">
+                    Sea Forest Waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Rowing
+                  </div>
+                  <div class="col">
+                    Women's Single Sculls,Heat 1
+                  </div>
+                  <div class="col">
+                    09:30
+                  </div>
+                  <div class="col">
+                    Sea Forest Waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Rowing
+                  </div>
+                  <div class="col">
+                    Women's Single Sculls,Heat 2
+                  </div>
+                  <div class="col">
+                    09:40
+                  </div>
+                  <div class="col">
+                    Sea Forest Waterway
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    Rowing
+                  </div>
+                  <div class="col">
+                    Women's Single Sculls,Heat 3
+                  </div>
+                  <div class="col">
+                    09:50
+                  </div>
+                  <div class="col">
+                    Sea Forest Waterway
+                  </div>
+                </div>
+                </div>
+                <br>
+                <br>
+                <h4 id="d9"><b>DAY 9</b></h4>
+                <br>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      <b>SPORTS</b>
+                    </div>
+                    <div class="col">
+                      <b>EVENT</b>
+                    </div>
+                    <div class="col">
+                      <b>START TIME</b>
+                    </div>
+                    <div class="col">
+                     <b>VENUE</b>
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Shooting
+                    </div>
+                    <div class="col">
+                      10m Air Riffle Women's,Qualification
+                    </div>
+                    <div class="col">
+                      08:30
+                    </div>
+                    <div class="col">
+                      Asaka Shooting Range-10m Range
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Golf
+                    </div>
+                    <div class="col">
+                     Men's Individual Stroke Play,Round 1
+                    </div>
+                    <div class="col">
+                      07:30
+                    </div>
+                    <div class="col">
+                      Kasumigaseki Country Club
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Rowing 
+                    </div>
+                    <div class="col">
+                      Lightweight Men's Double Sculls,Final B
+                    </div>
+                    <div class="col">
+                      09:00
+                    </div>
+                    <div class="col">
+                      Sea Forest Waterway
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Rowing 
+                    </div>
+                    <div class="col">
+                      Lightweight Women's Double Sculls,Final B
+                    </div>
+                    <div class="col">
+                      09:00
+                    </div>
+                    <div class="col">
+                      Sea Forest Waterway
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Shooting
+                    </div>
+                    <div class="col">
+                      25m Pistol Women's Qualification, Precision
+                    </div>
+                    <div class="col">
+                      09:00
+                    </div>
+                    <div class="col">
+                      Asaka Shooting Range-Shotgun Ranges
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Badminton
+                    </div>
+                    <div class="col">
+                      Women's Epee individual,Table of 64,LIN Yik Hei Coco vs ABDUL RAHMAN Kiria Tikanah
+                    </div>
+                    <div class="col">
+                      09:00
+                    </div>
+                    <div class="col">
+                    Makuhari Messe Hall B red Piste
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Badminton
+                    </div>
+                    <div class="col">
+                      Men's Single Scull, Heat 6
+                    </div>
+                    <div class="col">
+                      09:20
+                    </div>
+                    <div class="col">
+                      Sea Forest Waterway
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Cycling
+                    </div>
+                    <div class="col">
+                      Women's Quaterfinals,Run 1
+                    </div>
+                    <div class="col">
+                      10:30
+                    </div>
+                    <div class="col">
+                      Ariake Urban Sports Park
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Cycling
+                    </div>
+                    <div class="col">
+                      Men's Quaterfinals,Run 1
+                    </div>
+                    <div class="col">
+                      10:45
+                    </div>
+                    <div class="col">
+                      Ariake Urban Sports Park
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      Rowing
+                    </div>
+                    <div class="col">
+                      Women's Single Sculls,Heat 3
+                    </div>
+                    <div class="col">
+                      11:00
+                    </div>
+                    <div class="col">
+                      Sea Forest Waterway
+                    </div>
+                  </div>
+                  </div>
+                  <br>
+                  <br>
+                  <h4 id="d10"><b>DAY 10</b></h4>
+                  <br>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        <b>SPORTS</b>
+                      </div>
+                      <div class="col">
+                        <b>EVENT</b>
+                      </div>
+                      <div class="col">
+                        <b>START TIME</b>
+                      </div>
+                      <div class="col">
+                       <b>VENUE</b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Golf
+                      </div>
+                      <div class="col">
+                       Men's Individual Stroke Play, Round 2
+                      </div>
+                      <div class="col">
+                        07:30
+                      </div>
+                      <div class="col">
+                        Kasumigaseki Country Club
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Rowing 
+                      </div>
+                      <div class="col">
+                        Men's Single scull,Final B
+                      </div>
+                      <div class="col">
+                        07:45
+                      </div>
+                      <div class="col">
+                        Sea Forest Waterway 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Rowing 
+                      </div>
+                      <div class="col">
+                        Women's Single scull,Final B
+                      </div>
+                      <div class="col">
+                        08:00
+                      </div>
+                      <div class="col">
+                        Men's Single scull,Final B
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                       Shooting
+                      </div>
+                      <div class="col">
+                        Trap Mixed Team,Pre-Event Training
+                      </div>
+                      <div class="col">
+                        09:00
+                      </div>
+                      <div class="col">
+                       Asaka Shooting Range-Shotgun Ranges
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Athletics
+                      </div>
+                      <div class="col">
+                        Women's 100m, Preliminary Round,heat 1 
+                      </div>
+                      <div class="col">
+                        09:00
+                      </div>
+                      <div class="col">
+                       Olympic Stadium-Track
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Fencing
+                      </div>
+                      <div class="col">
+                        Women's Epee individual,Table of 64,LIN Yik Hei Coco vs ABDUL RAHMAN Kiria Tikanah
+                      </div>
+                      <div class="col">
+                        09:00
+                      </div>
+                      <div class="col">
+                      Makuhari Messe Hall B red Piste
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Badminton
+                      </div>
+                      <div class="col">
+                        Men's Single Scull, Heat 6
+                      </div>
+                      <div class="col">
+                        09:20
+                      </div>
+                      <div class="col">
+                        Sea Forest Waterway
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        Volleyball
+                      </div>
+                      <div class="col">
+                      Women's, Preliminary Round,Group A
+                      </div>
+                      <div class="col">
+                        09:00
+                      </div>
+                      <div class="col">
+                        Ariake arena
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                       Athletics
+                      </div>
+                      <div class="col">
+                       Women's 1500m,Round 1-Heat 3
+                      </div>
+                      <div class="col">
+                        10:00
+                      </div>
+                      <div class="col">
+                       Olumpic Stadium Track
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                       Table tennis
+                      </div>
+                      <div class="col">
+                        Men's Team,round of 16
+                      </div>
+                      <div class="col">
+                        10:00
+                      </div>
+                      <div class="col">
+                       Tokyo Metropolian Gymnasium table 2
+                      </div>
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                
+              
+            
+          
+        
+      
+    
+    
     
     <!-- End Example Code -->
   </body>
