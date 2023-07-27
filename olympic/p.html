@@ -9,57 +9,29 @@
   </style>
 </head>
 <body>
-  <!-- First Poll Section -->
-  <div id="poll1">
-    <h3>Poll Question 1:</h3>
-    <ul id="options1">
+  <div id="poll">
+    <h3>Poll Question:</h3>
+    <ul id="options">
       <li>
         <label>
-          <input type="radio" name="vote1" value="option1"> Option 1
+          <input type="radio" name="vote" value="option1"> Option 1
         </label>
         <span class="votes">0</span>
       </li>
       <li>
         <label>
-          <input type="radio" name="vote1" value="option2"> Option 2
-        </label>
-        <span class="votes">0</span>
-      </li>
-      <!-- Add more options here as needed -->
-    </ul>
-    <button class="submitBtn">Submit Vote</button>
-    <p class="voteMessage"></p>
-    <div class="pollResults">
-      <!-- Poll results will be displayed here -->
-    </div>
-  </div>
-
-  <!-- Second Poll Section -->
-  <div id="poll2">
-    <h3>Poll Question 2:</h3>
-    <ul id="options2">
-      <li>
-        <label>
-          <input type="radio" name="vote2" value="option1"> Option 1
-        </label>
-        <span class="votes">0</span>
-      </li>
-      <li>
-        <label>
-          <input type="radio" name="vote2" value="option2"> Option 2
+          <input type="radio" name="vote" value="option2"> Option 2
         </label>
         <span class="votes">0</span>
       </li>
       <!-- Add more options here as needed -->
     </ul>
-    <button class="submitBtn">Submit Vote</button>
-    <p class="voteMessage"></p>
-    <div class="pollResults">
+    <button id="submitBtn">Submit Vote</button>
+    <p id="voteMessage"></p>
+    <div id="pollResults">
       <!-- Poll results will be displayed here -->
     </div>
   </div>
-
-  <!-- Add more poll sections as needed -->
 
   <script>
     function getRandomVoteCounts(optionsCount) {
@@ -71,81 +43,65 @@
       return votesData;
     }
 
-    function initializePoll(pollId) {
-      function submitVote(vote) {
-        const votedKey = `voted_${pollId}`;
-        if (localStorage.getItem(votedKey) === 'true') {
-          alert('You have already voted.');
-          return;
-        }
-
-        const votesKey = `votes_${pollId}`;
-        const votesData = JSON.parse(localStorage.getItem(votesKey)) || getRandomVoteCounts(2);
-        votesData[vote]++;
-        localStorage.setItem(votesKey, JSON.stringify(votesData));
-        localStorage.setItem(votedKey, 'true');
-
-        const voteMessage = document.getElementById(`${pollId}_voteMessage`);
-        voteMessage.textContent = 'Vote submitted successfully!';
-        voteMessage.style.color = 'green';
-
-        document.getElementById(`${pollId}_submitBtn`).disabled = true;
-
-        displayPollResults();
+    function submitVote(vote) {
+      if (localStorage.getItem('voted') === 'true') {
+        alert('You have already voted.');
+        return;
       }
 
-      function displayPollResults() {
-        const votesKey = `votes_${pollId}`;
-        const votesData = JSON.parse(localStorage.getItem(votesKey)) || getRandomVoteCounts(2);
-        const pollResultsDiv = document.getElementById(`${pollId}_pollResults`);
-        pollResultsDiv.innerHTML = '';
+      const votesData = JSON.parse(localStorage.getItem('votes')) || getRandomVoteCounts(2);
+      votesData[vote]++;
+      localStorage.setItem('votes', JSON.stringify(votesData));
+      localStorage.setItem('voted', 'true');
 
-        const optionsList = document.getElementById(`${pollId}_options`);
-        const options = optionsList.getElementsByTagName('li');
+      const voteMessage = document.getElementById('voteMessage');
+      voteMessage.textContent = 'Vote submitted successfully!';
+      voteMessage.style.color = 'green';
 
-        Object.keys(votesData).forEach((option, index) => {
-          const votesCount = votesData[option];
-          const optionResult = document.createElement('p');
-          optionResult.textContent = `${options[index].textContent.trim()}: ${votesCount} votes`;
-          pollResultsDiv.appendChild(optionResult);
+      document.getElementById('submitBtn').disabled = true;
 
-          options[index].querySelector('.votes').textContent = votesCount;
-        });
-      }
-
-      // Call the displayPollResults function initially to show vote counts
       displayPollResults();
+    }
 
-      // Attach event listener to each submit button in the poll section
-      document.querySelectorAll(`#${pollId} .submitBtn`).forEach(button => {
-        button.addEventListener('click', function() {
-          const selectedOption = document.querySelector(`input[name="vote${pollId}"]:checked`);
-          if (!selectedOption) {
-            alert('Please select an option.');
-            return;
-          }
+    function displayPollResults() {
+      const votesData = JSON.parse(localStorage.getItem('votes')) || getRandomVoteCounts(2);
+      const pollResultsDiv = document.getElementById('pollResults');
+      pollResultsDiv.innerHTML = '';
 
-          const voteValue = selectedOption.value;
-          submitVote(voteValue);
-        });
-      });
+      const optionsList = document.getElementById('options');
+      const options = optionsList.getElementsByTagName('li');
 
-      window.addEventListener('load', function() {
-        const votedKey = `voted_${pollId}`;
-        if (localStorage.getItem(votedKey) === 'true') {
-          document.querySelectorAll(`#${pollId} .submitBtn`).forEach(button => {
-            button.disabled = true;
-          });
-          document.getElementById(`${pollId}_voteMessage`).textContent = 'You have already voted.';
-          document.getElementById(`${pollId}_voteMessage`).style.color = 'red';
-        }
+      Object.keys(votesData).forEach((option, index) => {
+        const votesCount = votesData[option];
+        const optionResult = document.createElement('p');
+        optionResult.textContent = `${options[index].textContent.trim()}: ${votesCount} votes`;
+        pollResultsDiv.appendChild(optionResult);
+
+        options[index].querySelector('.votes').textContent = votesCount;
       });
     }
 
-    // Initialize each poll section
-    initializePoll('poll1');
-    initializePoll('poll2');
-    // Add more poll sections as needed
+    // Call the displayPollResults function initially to show vote counts
+    displayPollResults();
+
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      const selectedOption = document.querySelector('input[name="vote"]:checked');
+      if (!selectedOption) {
+        alert('Please select an option.');
+        return;
+      }
+
+      const voteValue = selectedOption.value;
+      submitVote(voteValue);
+    });
+
+    window.addEventListener('load', function() {
+      if (localStorage.getItem('voted') === 'true') {
+        document.getElementById('submitBtn').disabled = true;
+        document.getElementById('voteMessage').textContent = 'You have already voted.';
+        document.getElementById('voteMessage').style.color = 'red';
+      }
+    });
   </script>
 </body>
 </html>

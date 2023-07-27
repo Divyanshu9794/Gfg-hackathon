@@ -51,6 +51,38 @@ app.get('/payment.html', (req, res) => {
     res.sendFile(__dirname + '/payment.html')
 
 })
+app.get('/archery.html', (req, res) => {
+    res.sendFile(__dirname + '/archery.html')
+
+})
+app.get('/atheletes.html', (req, res) => {
+    res.sendFile(__dirname + '/atheletes.html')
+
+})
+app.get('/badminton.html', (req, res) => {
+    res.sendFile(__dirname + '/badminton.html')
+
+})
+app.get('/boxing.html', (req, res) => {
+    res.sendFile(__dirname + '/boxing.html')
+
+})
+app.get('/hockey.html', (req, res) => {
+    res.sendFile(__dirname + '/hockey.html')
+
+})
+app.get('/tennis.html', (req, res) => {
+    res.sendFile(__dirname + '/tennis.html')
+
+})
+app.get('/weightlifting.html', (req, res) => {
+    res.sendFile(__dirname + '/weightlifting.html')
+
+})
+app.get('/wrestling.html', (req, res) => {
+    res.sendFile(__dirname + '/wrestling.html')
+
+})
 
 
 
