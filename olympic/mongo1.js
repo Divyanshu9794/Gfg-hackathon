@@ -21,6 +21,14 @@ app.get('/signup.html', (req, res) => {
     res.sendFile(__dirname + '/signup.html')
 
 })
+app.get('/softball.html', (req, res) => {
+    res.sendFile(__dirname + '/softball.html')
+
+})
+app.get('/archerys.html', (req, res) => {
+    res.sendFile(__dirname + '/archerys.html')
+
+})
 app.get('/atheletes.html', (req, res) => {
     res.sendFile(__dirname + '/atheletes.html')
 
