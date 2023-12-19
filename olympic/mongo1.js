@@ -122,8 +122,8 @@ app.post('/signup.html', function (req, res) {
     var mailoptions = {
         from: 'sdivyanshu5561@gmail.com',
         to: req.body.email,
-        subject: 'Welcome to Geeks olympics ' ,
-        html: "Welcome to geeks Olympics"
+        subject: ' Welcome to the Olympic Website Community!' ,
+        html: "Dear User,<br>Congratulations! You have successfully signed up for our Olympic Website.<br> Welcome to our vibrant community where you can dive into the world of sports and stay updated on all the thrilling Olympic events. Start exploring and enjoy the journey with us!<br><br>Best regards,<br><br> Olympic Website Community"
 
 
     };
@@ -165,8 +165,12 @@ app.post('/payment.html', (req, res) => {
     const roomNumber = Math.floor(Math.random() * 100) + 1;
   
     // Create the email message
-    const message = `Dear ${name},\n\nYour ticket has been booked for the event .
-      Your room number is ${roomNumber}.`;
+    const message = `
+      Dear ${name},\n\n Congratulations! Your payment for the Olympic Stadium seat booking has been successfully processed. Your reservation is confirmed, and you're all set to enjoy the thrilling events and  Your seat number is ${roomNumber}.Thank you for choosing us, and we look forward to hosting you at the Olympics!
+
+Best regards,
+Olympics Event Organization;
+`
   
     // Set up the nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -181,7 +185,7 @@ app.post('/payment.html', (req, res) => {
     const mailOptions = {
       from: 'sdivyanshu5561@gmail.com',
       to: email,
-      subject: 'Ticket Booking Confirmation',
+      subject: 'Successful Payment Confirmation for Your Olympic Stadium Seat Booking',
       text: message
     };
   
