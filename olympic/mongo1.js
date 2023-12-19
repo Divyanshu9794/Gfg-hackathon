@@ -14,7 +14,7 @@ app.use(express.static("Asset"));
 
 //static path:the entire public directory is made static
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/login.html')
+    res.sendFile(__dirname + '/index.html')
 
 })
 app.get('/signup.html', (req, res) => {
@@ -37,8 +37,8 @@ app.get('/atheletes.html', (req, res) => {
     res.sendFile(__dirname + '/atheletes.html')
 
 })
-app.get('/index.html', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+app.get('/login.html', (req, res) => {
+    res.sendFile(__dirname + '/login.html')
 
 })
 app.get('/fixture.html', (req, res) => {
@@ -137,7 +137,7 @@ app.post('/signup.html', function (req, res) {
             // res.alert("Confirmation mail will be sent to you Shortly!! Thankyou.")
             // res.redirect('/');
             console.log("success")
-            res.redirect("/index.html");
+            res.redirect("/");
         }
 
     })
@@ -195,7 +195,7 @@ app.post('/payment.html', (req, res) => {
         
  
             alert('booked Successfully');
-            res.redirect("/index.html");
+            res.redirect("/");
       }
     });
   });
@@ -214,7 +214,7 @@ app.post('/login.html',async(req,res)=>{
         
  
             alert('Logged In Successfully')
-            res.redirect("/index.html");
+            res.redirect("/");
             
         }
         else{
