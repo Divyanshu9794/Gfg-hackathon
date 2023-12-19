@@ -29,6 +29,7 @@ app.get('/softball.html', (req, res) => {
     res.sendFile(__dirname + '/softball.html')
 
 })
+
 app.get('/archerys.html', (req, res) => {
     res.sendFile(__dirname + '/archerys.html')
 
