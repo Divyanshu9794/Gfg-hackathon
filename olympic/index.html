@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="/Assets/index.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar">
-  <nav id="navbar" class="navbar navbar-expand-lg fixed-top "  style="position: fixed;>
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top "  style="position: fixed;">
     <div class="container-fluid">
-      <a href="#"><img src="/images/logo_color.svg"></a>
+      <a href="/index.html"><img src="/images/logo_color.svg"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,12 +26,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/atheletes.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Atheletes</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/login.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup.html" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Signup</a>
-          </li>
+            
           <li class="nav-item">
             <a class="nav-link" href="https://olympic-games-analysis.streamlit.app/" target="_blank" style="font-size: 25px;padding-left: 25px;color:#FFFFFF">Analysis</a>
           </li>
@@ -195,17 +190,17 @@
   </section>
   <div class="container-fluid">
     <div class="row">
-     <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 50px; padding-top: 20px; padding-bottom: 15px;">
+     <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 100px; padding-top: 20px; padding-bottom: 15px;background:black;">
        <img src="/images/stadium2.jpg" height="1100px" width="1000px" class="img-fluid">      
     </div>
-    <div class="col-xl-7 col-lg-7 col-md-7">
-       <h2 style="padding-top: 80px;padding-left: 200px;font-size: 55px;">Enjoy the thrill live!</h2>   
+    <div class="col-xl-7 col-lg-7 col-md-7" style="background-color: black;">
+       <h2 style="padding-top: 80px;padding-left: 0px;font-size: 55px; color: #FFFFFF;background-color: black;">Enjoy the thrill live!</h2>   
       <a href="ticket_generator.html"><button id="btn-1">Book tickets</button></a>
           <!-- <button id="btn-1"><span><a href="ticket_generator.html">Book</a></span></button> -->
         </div>
  </div>
  </div>
-
+<!--
  <div class="container-fluid">
   <div class="row">
    <div class="col-xl-5 col-lg-5 col-md-5" style="padding-left: 50px; padding-top: 20px; padding-bottom: 15px;">
@@ -216,10 +211,37 @@
   <div class="col-xl-7 col-lg-7 col-md-7">
         
     <a href="https://olympic-games-analysis.streamlit.app/" target="_blank"><button id="btn-1"><span>Analysis Of Olympics</span></button></a>
-        <!-- <button id="btn-1"><span><a href="ticket_generator.html">Book</a></span></button> -->
+  
       </div>
 </div>
-</div>
+</div>-->
+<section>
+  <div class="row" style=" display: flex;
+  align-items: center;
+  width:100%;
+  justify-content: space-between;
+  background-color: #EDF3FF;
+  margin-top: 0px;">
+    <div class="col" style="display: flex;
+    flex-direction: column ;
+    align-items: center;
+    margin-top: 50px;">
+      <img src="/images/analysis.jpg" width="400px" height="300px" >
+      <h4>Olympic Analysis</h4>
+      <p>Review the previous tallys</p>
+      <a href="https://olympic-games-analysis.streamlit.app/" target="_blank"><button id="btn-1"><span>view</span></button></a>
+    </div>
+    <div class="col" style="display: flex;
+    flex-direction: column ;
+    align-items: center;
+    margin-top: 50px;">
+      <img src="/images/prediction.jpg" width="400px" height="300px" >
+      <h4>Olympic Prediction</h4>
+      <p>Get the prediction for next year</p>
+      <a href="/predictedresult.html" target="_blank"><button id="btn-1"><span>view</span></button></a>
+    </div>
+  </div>
+</section>
   <div class="footer">
     <p>copyright</p>
   </div>
